@@ -32,6 +32,7 @@ to treat it like a topbar and also to reserve space on the top.
 
 ```lua
 -- Custom Topbar rules
+
 hl.window_rule({
     match = { title = "Topbar" },
     float = true,
@@ -43,6 +44,12 @@ hl.window_rule({
     no_blur = true,
     no_follow_mouse = true,
     border_size = 0
+})
+
+hl.window_rule({
+    match = { title = "Topbar Popup" },
+    pin = true,
+    move = { "cursor_x", 40 },
 })
 ```
 
