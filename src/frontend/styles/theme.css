@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-text-50: #060906;
+  --color-text-100: #0d1210;
+  --color-text-200: #1b2522;
+  --color-text-300: #2d3e39;
+  --color-text-400: #445c55;
+  --color-text-500: #637d75;
+  --color-text-600: #7e9c93;
+  --color-text-700: #9cb8b0;
+  --color-text-800: #bcd4cd;
+  --color-text-900: #ddefeb;
+  --color-text-950: #f1f7f5;
+
+  --color-bg-50: #0f160f;
+  --color-bg-100: #112615;
+  --color-bg-200: #18331d;
+  --color-bg-300: #1d4025;
+  --color-bg-400: #265430;
+  --color-bg-500: #2f693c;
+  --color-bg-600: #3f8b50;
+  --color-bg-700: #55b66b;
+  --color-bg-800: #7dd091;
+  --color-bg-900: #b0e9bd;
+  --color-bg-950: #dff7e5;
+
+  --color-primary-50: #041005;
+  --color-primary-100: #082109;
+  --color-primary-200: #114113;
+  --color-primary-300: #1d6a20;
+  --color-primary-400: #2f7e25;
+  --color-primary-500: #18e000;
+  --color-primary-600: #42e62e;
+  --color-primary-700: #6ded5e;
+  --color-primary-800: #99f38e;
+  --color-primary-900: #c4f9be;
+  --color-primary-950: #e2fcdf;
+
+  --color-secondary-50: #061110;
+  --color-secondary-100: #0b2220;
+  --color-secondary-200: #16433e;
+  --color-secondary-300: #22645d;
+  --color-secondary-400: #317f76;
+  --color-secondary-500: #00dfc3;
+  --color-secondary-600: #2ee5cf;
+  --color-secondary-700: #5eeddc;
+  --color-secondary-800: #8ef3e8;
+  --color-secondary-900: #bef9f3;
+  --color-secondary-950: #dffcf9;
+
+  --color-accent-50: #1a0807;
+  --color-accent-100: #33110f;
+  --color-accent-200: #5c1f1b;
+  --color-accent-300: #7f2b26;
+  --color-accent-400: #b33d36;
+  --color-accent-500: #df8008;
+  --color-accent-600: #e5932e;
+  --color-accent-700: #ebaa5e;
+  --color-accent-800: #f1c18e;
+  --color-accent-900: #f7d9be;
+  --color-accent-950: #fdf1df;
+
+  --radius-border: 8px;
+
+  --color-ui-bg: var(--color-bg-50);
+  --color-ui-text: var(--color-text-500);
+  --color-ui-border: var(--color-bg-200);
+}
+
+@layer base {
+  body {
+    @apply text-ui-text;
+  }
+}
+
+@layer components {
+  .card {
+    @apply p-4 border border-ui-border rounded-border bg-bg-100;
+  }
+}

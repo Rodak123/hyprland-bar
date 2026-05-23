@@ -1,26 +1,12 @@
-import { useEffect, useState } from 'react';
+import { Island } from './components/Island';
+import { TimeModule } from './components/modules/TimeModule';
 
 export const App = () => {
-  const [time, setTime] = useState<string>('');
-
-  useEffect(() => {
-    const timeInterval = setInterval(() => {
-      const now = new Date();
-      setTime(now.toLocaleTimeString([], { hour: '2-digit', hourCycle: 'h24', minute: '2-digit', second: '2-digit' }));
-    }, 1000);
-
-    return () => {
-      clearInterval(timeInterval);
-    };
-  }, []);
-
   return (
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}>
-      <span>TIME = {time}</span>
+    <div className="flex items-stretch justify-center gap-[10px] h-full w-full pt-[10px]">
+      <Island>
+        <TimeModule />
+      </Island>
     </div>
   );
 };

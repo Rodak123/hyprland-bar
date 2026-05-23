@@ -1,0 +1,11 @@
+@import "./theme.css";
+
+body {
+  font-family: 'JetBrainsMono Nerd Font', monospace;
+  /* background-color: rgba(15, 22, 15, 0.9);
+  color: rgb(99, 125, 117); */
+}
+
+#root {
+  height: 40px;
+}

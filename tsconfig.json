@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "node20",
+    "module": "ESNext",
     "jsx": "react-jsx",
     "allowJs": true,
     "skipLibCheck": true,
@@ -13,8 +13,11 @@
         "./*"
       ]
     },
+    "types": [
+      "vite/client"
+    ],
     "outDir": "dist",
-    "moduleResolution": "node16",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "strict": true,
     "noUnusedLocals": true,
