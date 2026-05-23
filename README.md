@@ -62,4 +62,13 @@ npm run start
 
 Each module is a react component.
 
-- [ ] Time - displays current time
+- [ ] Time - shows current time
+- [ ] Storage - shows available/used storage
+- [ ] Workspace - shows current workspace + apps that run in it
+- [ ] Battery - shows battery status and if it is charging
+- [ ] Audio
+- [ ] System
+- [ ] Num Pad/Caps Lock
+- [ ] Keyboard
+- [ ] Wifi
+- [ ] Bluetooth
