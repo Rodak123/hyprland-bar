@@ -1,6 +1,8 @@
 import { WINDOW_HASH_PREFIX } from '../shared';
 import { Island } from './components/Island';
+import { BatteryModule } from './components/modules/BatteryModule';
 import { TimeModule } from './components/modules/TimeModule';
+import { WorkspaceModule } from './components/modules/WorkspaceModule';
 import { Button } from './components/ui/Button';
 import { WindowRouter } from './windows/WindowRouter';
 
@@ -29,9 +31,10 @@ export const App = () => {
         <TimeModule />
       </Island>
       <Island>
-        <Button onClick={handleOpenSettings}>
-           Settings
-        </Button>
+        <WorkspaceModule />
+      </Island>
+      <Island>
+        <BatteryModule />
       </Island>
     </div>
   );

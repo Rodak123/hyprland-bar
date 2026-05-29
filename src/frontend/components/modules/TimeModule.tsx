@@ -1,17 +1,21 @@
 import { useEffect, useState } from 'react';
-import { getTime } from '../../libs/utils/getTime';
+import { dateToTime } from '../../libs/utils/formatTime';
 
 interface TimeModuleProps { }
 
 export const TimeModule: React.FC<TimeModuleProps> = ({ }) => {
-  const [time, setTime] = useState<string>(getTime());
+  const [time, setTime] = useState<string>(dateToTime(new Date()));
 
   useEffect(() => {
-    const timeInterval = setInterval(() => {
-      setTime(getTime());
-    }, 1000);
+    const key = window.Fourteen.subscribe((data) => {
+      if (data.type !== 'system-clock') return;
+      const dateTime = data.data.dateTime;
+      const time = dateToTime(dateTime);
+      setTime(time);
+    })
+
     return () => {
-      clearInterval(timeInterval);
+      window.Fourteen.unsubscribe(key);
     };
   }, []);
 

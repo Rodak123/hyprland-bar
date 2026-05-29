@@ -3,8 +3,13 @@ import { FOURTEEN_CHANNEL, type FourteenAPI, type FourteenData, type FourteenEve
 
 const listeners: Record<string, FourteenEvent> = {};
 
+ipcRenderer.on(FOURTEEN_CHANNEL.BACK, (_event: IpcRendererEvent, data: FourteenData) => {
+  for (const listenerKey in listeners) {
+    listeners[listenerKey](data);
+  }
+});
+
 const api: FourteenAPI = {
-  send: (data: FourteenData) => ipcRenderer.send(FOURTEEN_CHANNEL.FORWARD, data),
   subscribe: (event: FourteenEvent) => {
     const key = crypto.randomUUID();
     listeners[key] = event;
@@ -18,9 +23,3 @@ const api: FourteenAPI = {
 };
 
 contextBridge.exposeInMainWorld(FOURTEEN_CHANNEL.PROPERTY, api);
-
-ipcRenderer.on(FOURTEEN_CHANNEL.BACK, (_event: IpcRendererEvent, data: FourteenData) => {
-  for (const listenerKey in listeners) {
-    listeners[listenerKey](data);
-  }
-});

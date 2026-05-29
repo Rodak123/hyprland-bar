@@ -13,7 +13,6 @@ An Electron + React hyprland topbar.
 
 ## ToDo
 
-- [ ] Use Docker
 - [ ] Create multiple topbar components
 - [ ] Make it configurable 
 
@@ -69,7 +68,7 @@ npm run start
 
 Each module is a react component.
 
-- [ ] Time - shows current time
+- [x] Time - shows current time
 - [ ] Storage - shows available/used storage
 - [ ] Workspace - shows current workspace + apps that run in it
 - [ ] Battery - shows battery status and if it is charging
